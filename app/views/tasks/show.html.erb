@@ -1,7 +1,13 @@
-<h1> <%= @tasks.title %> </h1>
-<h2><%= @tasks.details %></h2>
- <h2><%= check_box "task", "completed", {:checked => @tasks.completed} %> This task is not completed yet! </h2>
+<h1> <%= @task.title %> </h1>
+<h2><%= @task.details %></h2>
+ <h2><%= check_box "task", "completed", {:checked => @task.completed} %> This task is not completed yet! </h2>
+
+<%= link_to "Delete #{@task.title}",
+task_path(@task),
+method: :delete,
+data: { confirm: "Are you sure?" } %>
 <%= link_to 'Back to tasks', tasks_path %>
+<%= link_to 'Edit tasks', edit_task_path %>
 
 
 

@@ -1,0 +1,9 @@
+<h1>My Tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <%= check_box "task", "completed", {:checked => task.completed, :disabled => true} %>
+   <%= link_to task.title, task_path(task) %>
+  <br>
+<% end %>
+</ul>
+
